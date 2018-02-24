@@ -17,9 +17,7 @@ If index.html already exists the script will exit without making any files (this
 The script can take certain command-line arguments.
 
 ## Arguments
-`--r` Deletes the files and the assets folder created by the script.
-
-`-f` Forces the script to execute. __WARNING:__ For normal operations this will *__overwrite__* the index.html file with the template structure. When paired with the `--r` command this will *__remove everything__* in the assets folder and subfolder, even user created files. __USE WITH CAUTION!__
+`-f` Forces the script to execute. __WARNING:__ For normal operations this will *__overwrite__* the index.html file with the template structure.  __USE WITH CAUTION!__
 
 ## Advance Usage
 Place the script in a $PATH folder (e.g. `usr/bin`) to be able to execute the script anywhere with the command `mkhw.sh`.

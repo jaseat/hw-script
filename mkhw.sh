@@ -18,9 +18,6 @@ do
         -f)
             FORCE=true 
             ;;
-        --r)
-            REMOVE=true
-            ;;
         *)
             echo Improper argument: $args
             echo Aborting script
@@ -28,32 +25,6 @@ do
             ;;
     esac
 done
-
-if [ "$REMOVE" = true ]
-then
-    read -p "Warning: This will delete files and folders. Are you sure? (y/n): " DELETE
-    if [ "$DELETE" = "y" ]
-    then
-        if [ -e "./index.html" ] && [ -e "./assets/javascript/app.js" ] && [ -e "./assets/css/style.css" ]
-        then
-            rm ./index.html ./assets/javascript/app.js ./assets/css/style.css
-        fi
-        if [ -e "./assets" ]
-        then
-            if [ "$FORCE" = true ]
-            then
-                rm -r ./assets
-            else
-            find ./assets -depth -type d -exec rmdir {} \;
-            fi
-        fi
-        exit
-    else
-        echo Aborting script 
-        exit
-    fi
-
-fi
 
 echo Creating files...
 
