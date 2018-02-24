@@ -4,7 +4,6 @@
 GIT=false
 RESET=false
 FORCE=false
-REMOVE=false
 
 for args in $@
 do
