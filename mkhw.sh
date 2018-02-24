@@ -29,7 +29,7 @@ echo Creating files...
 
 if [ -e "./index.html" ] && [ $FORCE = false ]
 then
-    echo Aborting script: index.html already exists (use -f to overwrite index.html)
+    echo "Aborting script: index.html already exists (use -f to overwrite index.html)"
     exit
 fi
 
