@@ -24,7 +24,7 @@ do
         *)
             echo Improper argument: $args
             echo Aborting script
-            exit
+            exit 1
             ;;
     esac
 done
@@ -50,7 +50,7 @@ then
         exit
     else
         echo Aborting script 
-        exit
+        exit 1
     fi
 
 fi
@@ -60,7 +60,7 @@ echo Creating files...
 if [ -e "./index.html" ] && [ $FORCE = false ]
 then
     echo "Aborting script: index.html already exists (use -f to overwrite index.html)"
-    exit
+    exit 1
 fi
 
 (cat << _EOF_
@@ -80,5 +80,18 @@ _EOF_
 ) > ./index.html
 mkdir -p ./assets/css ./assets/javascript ./assets/images
 touch ./assets/javascript/app.js ./assets/css/style.css
+
+if [ "$GIT" = true ]
+then
+    echo Doing git commands...
+    git status > /dev/null
+    if [ $? = 0 ]
+    then
+        echo This is a git folder
+    else
+        echo This is not a git folder
+    fi
+
+fi
 
 echo Done!
