@@ -22,7 +22,7 @@ The script can take certain command-line arguments.
 `-f` Forces the script to execute. __WARNING:__ For normal operations this will *__overwrite__* the index.html file with the template structure. When paired with the `--r` command this will *__remove everything__* in the assets folder and subfolder, even user created files. __USE WITH CAUTION!__
 
 ## Advance Usage
-Place the script in a $PATH folder (e.g. `user/bin`) to be able to execute the script anywhere with the command `mkhw.sh`.
+Place the script in a $PATH folder (e.g. `usr/bin`) to be able to execute the script anywhere with the command `mkhw.sh`.
 
 ## Warning
 This script is provided as is. This script has been tested on git-bash in Windows 7. It has not been tested in any other environment.
